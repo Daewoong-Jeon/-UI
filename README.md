@@ -1,7 +1,7 @@
 # Monthly-development-status-UI
 당월 개발 현황을 확인할 수 있는 UI
 
-## Test Guide
+## Local Test Guide
 
 1. enter to front directory
 `cd /front`
