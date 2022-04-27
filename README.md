@@ -5,12 +5,12 @@
 
 1. enter to front directory
 `cd /front`
-2. exec front server
+2. run front server
 `npm run serve`
 3. enter to back directory
 `cd ../back`
 4. compile typescript file to javascript file
 `tsc`
-5. exec back server
+5. run back server
 `node /dist/main.js`
 6. connect `http://localhost:8080`
