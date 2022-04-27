@@ -23,10 +23,11 @@ export const getProcess = async (request: Request, response: Response) => {
 };
 
 export const postProcess = async (request: Request, response: Response) => {
-    const { title, subTitle } = request.body;
+    const { title, step } = request.body;
 
-    if (title === undefined || subTitle === undefined) {
+    if (title === undefined || step === undefined) {
         response.status(400).json({ errMessage: "bad request" });
+        return ;
     }
     console.log(request.body);
     fs.writeFile("../data/process.json", JSON.stringify(request.body), (error) => {

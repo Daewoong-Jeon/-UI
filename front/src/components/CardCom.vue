@@ -6,15 +6,13 @@
         class="mb-2"
     >
         <b-card-text>
-        {{ process.subTitle[index].name }}
+        {{ process.step[index].name }}
             <ol type=1>
-                <li v-for="( row, index ) in process.subTitle[index].subTitle" v-bind:key="index">
+                <li v-for="( row, index ) in process.step[index].subTitle" v-bind:key="index">
                     {{ row.sub }}
                 </li>
             </ol>
         </b-card-text>
-
-        <!-- <b-button href="#" variant="primary">Go somewhere</b-button> -->
     </b-card>
 </template>
 <script>

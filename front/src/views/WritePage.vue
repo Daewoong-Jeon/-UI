@@ -11,14 +11,6 @@
                 <th>제목</th>
                 <td><input type="text" v-model="title"/></td>
             </tr>
-            <!-- <tr>
-                <th>subTitle1</th>
-                <td><input type="text" v-model="subTitle"/></td>
-            </tr>
-            <tr>
-                <th>subTitle2</th>
-                <td><input type="text" v-model="subTitle"/></td>
-            </tr> -->
         </table>
         <table class="table">
             <thead>
@@ -26,22 +18,29 @@
                 <td><strong>Step 1</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle1.name"></td>
+                    <td><input type="text" v-model="step1.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle1.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step1.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step1.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step1.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle1.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step1.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle1.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step1.subTitle)">Add row</button>
             </div>
         </table>
         <table class="table">
@@ -50,22 +49,29 @@
                 <td><strong>Step 2</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle2.name"></td>
+                    <td><input type="text" v-model="step2.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle2.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step2.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step2.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step2.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle2.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step2.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle2.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step2.subTitle)">Add row</button>
             </div>
         </table>
         <table class="table">
@@ -74,22 +80,29 @@
                 <td><strong>Step 3</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle3.name"></td>
+                    <td><input type="text" v-model="step3.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle3.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step3.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step3.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step3.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle3.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step3.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle3.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step3.subTitle)">Add row</button>
             </div>
         </table>
         <table class="table">
@@ -98,22 +111,29 @@
                 <td><strong>Step 4</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle4.name"></td>
+                    <td><input type="text" v-model="step4.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle4.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step4.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step4.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step4.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle4.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step4.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle4.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step4.subTitle)">Add row</button>
             </div>
         </table>
         <table class="table">
@@ -122,22 +142,29 @@
                 <td><strong>Step 5</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle5.name"></td>
+                    <td><input type="text" v-model="step5.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle5.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step5.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step5.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step5.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle5.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step5.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle5.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step5.subTitle)">Add row</button>
             </div>
         </table>
         <table class="table">
@@ -146,22 +173,29 @@
                 <td><strong>Step 6</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle6.name"></td>
+                    <td><input type="text" v-model="step6.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle6.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step6.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step6.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step6.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle6.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step6.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle6.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step6.subTitle)">Add row</button>
             </div>
         </table>
         <table class="table">
@@ -170,22 +204,29 @@
                 <td><strong>Step 7</strong></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Step Name</td>
-                    <td><input type="text" v-model="subTitle7.name"></td>
+                    <td><input type="text" v-model="step7.name"></td>
                     <td></td>
                 </tr>
-                <tr v-for="( row, index ) in subTitle7.subTitle" v-bind:key="index">
+                <tr>
+                    <td>Start Date</td>
+                    <td><DatePicker v-model="step7.startDate"/></td>
+                    <td>End Date</td>
+                    <td><DatePicker v-model="step7.endDate"/></td>
+                </tr>
+                <tr v-for="( row, index ) in step7.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, subTitle7.subTitle)">Remove</button></td>
+                    <td><button @click="removeRow(index, step7.subTitle)">Remove</button></td>
                 </tr>
             </tbody>
             <div>
-                <button class="button btn-primary" @click="addRow(subTitle7.subTitle)">Add row</button>
+                <button class="button btn-primary" @click="addRow(step7.subTitle)">Add row</button>
             </div>
         </table>
         <div class="btnWrap">
@@ -195,49 +236,77 @@
 </template>
 <script>
 import axios from "axios";
+import DatePicker from "vue2-datepicker";
+
+import 'vue2-datepicker/index.css';
 
 export default {
+    components: {
+        DatePicker
+    },
     data() {
         return {
             title: '',
-            subTitle1: {
+            step: [
+                {
+                    name: "",
+                    startDate: "",
+                    endDate: "",
+                    subTitle: [
+                        { sub: "" }
+                    ]
+                }
+            ],
+            step1: {
+                name: "",
+                startDate: "",
+                endDate: "",
+                subTitle: [
+                    { sub: "" }
+                ]
+            },
+            step2: {
+                name: "",
+                startDate: "",
+                endDate: "",
+                subTitle: [
+                    { sub: "" }
+                ]
+            },
+            step3: {
+                name: "",
+                startDate: "",
+                endDate: "",
+                subTitle: [
+                    { sub: "" }
+                ]
+            },
+            step4: {
+                name: "",
+                startDate: "",
+                endDate: "",
+                subTitle: [
+                    { sub: "" }
+                ]
+            },
+            step5: {
                 name: "",
                 subTitle: [
                     { sub: "" }
                 ]
             },
-            subTitle2: {
+            step6: {
                 name: "",
+                startDate: "",
+                endDate: "",
                 subTitle: [
                     { sub: "" }
                 ]
             },
-            subTitle3: {
+            step7: {
                 name: "",
-                subTitle: [
-                    { sub: "" }
-                ]
-            },
-            subTitle4: {
-                name: "",
-                subTitle: [
-                    { sub: "" }
-                ]
-            },
-            subTitle5: {
-                name: "",
-                subTitle: [
-                    { sub: "" }
-                ]
-            },
-            subTitle6: {
-                name: "",
-                subTitle: [
-                    { sub: "" }
-                ]
-            },
-            subTitle7: {
-                name: "",
+                startDate: "",
+                endDate: "",
                 subTitle: [
                     { sub: "" }
                 ]
@@ -248,32 +317,38 @@ export default {
     },
     methods: {
         addRow: function(subTitle){
-            // let size = this.subTitle.length;
             subTitle.push({ sub: "" });
         },
         removeRow: function(index, subTitle){
-            // console.log(index);
             subTitle.splice(index, 1);
         },
         fnAddProc: async function() { 
-            // this.url = "/data/process.json";
-            // const formData = new FormData();
-            // let subTitle = [];
-            // formData.append("title", this.title);
-            // for (let data in this.subTitle)
-            //     subTitle.push(data);
-            // console.log(subTitle);
-            // formData.append("subTitle", subTitle);
-            // console.log(subTitle);
+            let step = [];
+            step.push(this.step1);
+            step.push(this.step2);
+            step.push(this.step3);
+            step.push(this.step4);
+            step.push(this.step5);
+            step.push(this.step6);
+            step.push(this.step7);
 
-            let subTitle = [];
-            subTitle.push(this.subTitle1);
-            subTitle.push(this.subTitle2);
-            subTitle.push(this.subTitle3);
-            subTitle.push(this.subTitle4);
-            subTitle.push(this.subTitle5);
-            subTitle.push(this.subTitle6);
-            subTitle.push(this.subTitle7);
+            for (let i = 0; i < step.length; i++) {
+                if (step[i].name === "" ||
+                    step[i].startDate === "" ||
+                    step[i].endDate === "") {
+                        console.log("test");
+                        alert("빈칸에 내용을 채워주세요.");
+                        return ;
+                    }
+                else if (step[i].subTitle.length > 0) {
+                    for (let j = 0; j < step[i].subTitle.length; i++) {
+                        if (step[i].subTitle[j].sub === "") {
+                            alert("빈칸에 내용을 채워주세요.");
+                            return ;
+                        }
+                    }
+                }
+            }
 
             const res = await axios({
                 method: "post",
@@ -283,7 +358,7 @@ export default {
                 },
                 data: {
                     title: this.title,
-                    subTitle: subTitle
+                    step: step
                 }
             });
             console.log(res);
