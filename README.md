@@ -13,3 +13,4 @@
 `tsc`
 5. exec back server
 `node /dist/main.js`
+6. connect `http://localhost:8080`
