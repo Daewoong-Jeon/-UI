@@ -247,16 +247,6 @@ export default {
     data() {
         return {
             title: '',
-            step: [
-                {
-                    name: "",
-                    startDate: "",
-                    endDate: "",
-                    subTitle: [
-                        { sub: "" }
-                    ]
-                }
-            ],
             step1: {
                 name: "",
                 startDate: "",
@@ -350,18 +340,26 @@ export default {
                 }
             }
 
-            const res = await axios({
-                method: "post",
-                url: "http://localhost:5000/process",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                data: {
-                    title: this.title,
-                    step: step
-                }
-            });
-            console.log(res);
+            try {
+                const res = await axios({
+                    method: "post",
+                    url: "http://localhost:5000/process",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    data: {
+                        title: this.title,
+                        step: step
+                    }
+                });
+                alert("생성되었습니다.");
+                location.replace('/');
+                console.log(res);
+            } catch (error) {
+                alert("에러가 발생하였습니다.");
+                console.log(error);
+                return ;
+            }
         }
     }
 }
