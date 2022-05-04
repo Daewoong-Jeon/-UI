@@ -3,11 +3,13 @@
         <h1>{{ process.title }}</h1>
 
         <ProgressCom :process="this.process"/>
+        <CalendarCom :process="this.process"/>
     </div>
 </template>
 <script>
 import process from "../../../data/process.json";
 import ProgressCom from '../components/ProgressCom.vue';
+import CalendarCom from '../components/CalendarCom.vue';
 
 export default {
     data () {
@@ -21,7 +23,8 @@ export default {
         }
     },
     components: {
-        ProgressCom
+        ProgressCom,
+        CalendarCom
     },
     methods: {
         getData() {
