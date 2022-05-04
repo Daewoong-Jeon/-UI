@@ -42,7 +42,8 @@ export default {
 
             if (moment(startDate).isAfter(today) && moment(endDate).isAfter(today))
                 this.statusFlag = "1";
-            else if (moment(startDate).isBefore(today) && moment(endDate).isAfter(today))
+            else if (moment(startDate).isBefore(today) && moment(endDate).isAfter(today)
+                || moment(startDate).isSame(today) || moment(endDate).isSame(today))
                 this.statusFlag = "2";
             else if (moment(startDate).isBefore(today) && moment(endDate).isBefore(today))
                 this.statusFlag = "3";
