@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{ process.title }}</h1>
+        <h1 style="border: 16px solid transparent;">{{ process.title }}</h1>
 
         <ProgressCom :process="this.process"/>
         <CalendarCom :process="this.process"/>

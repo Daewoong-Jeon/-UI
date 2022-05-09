@@ -1,31 +1,32 @@
 <template>
     <div>
-        <h1>수정하기</h1>
+        <h1 style="border: 16px solid transparent;">Config Page</h1>
 
-        <table class="tbAdd">
+        <table class="tbAdd" style="border: 16px solid transparent;">
             <colgroup>
                 <col width="15%" />
                 <col width="*" />
             </colgroup>
             <tr>
                 <th>제목</th>
-                <td><input type="text" v-model="title"/></td>
+                <td style="border-left: 16px solid transparent;"><input type="text" v-model="title" disabled/></td>
             </tr>
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 1</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 1</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step1.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step1.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step1.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -33,30 +34,31 @@
                     <td>End Date</td>
                     <td><DatePicker v-model="step1.endDate" value-type="format"/></td>
                 </tr>
-                <tr v-for="( row, index ) in step1.subTitle" v-bind:key="index">
+                <!-- <tr v-for="( row, index ) in step1.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
                     <td><button @click="removeRow(index, step1.subTitle)">Remove</button></td>
-                </tr>
+                </tr> -->
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step1.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 2</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 2</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step2.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step2.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step2.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -64,30 +66,31 @@
                     <td>End Date</td>
                     <td><DatePicker v-model="step2.endDate" value-type="format"/></td>
                 </tr>
-                <tr v-for="( row, index ) in step2.subTitle" v-bind:key="index">
+                <!-- <tr v-for="( row, index ) in step2.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
                     <td><button @click="removeRow(index, step2.subTitle)">Remove</button></td>
-                </tr>
+                </tr> -->
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step2.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 3</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 3</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step3.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step3.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step3.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -95,30 +98,31 @@
                     <td>End Date</td>
                     <td><DatePicker v-model="step3.endDate" value-type="format"/></td>
                 </tr>
-                <tr v-for="( row, index ) in step3.subTitle" v-bind:key="index">
+                <!-- <tr v-for="( row, index ) in step3.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
                     <td><button @click="removeRow(index, step3.subTitle)">Remove</button></td>
-                </tr>
+                </tr> -->
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step3.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 4</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 4</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step4.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step4.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step4.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -126,30 +130,31 @@
                     <td>End Date</td>
                     <td><DatePicker v-model="step4.endDate" value-type="format"/></td>
                 </tr>
-                <tr v-for="( row, index ) in step4.subTitle" v-bind:key="index">
+                <!-- <tr v-for="( row, index ) in step4.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
                     <td><button @click="removeRow(index, step4.subTitle)">Remove</button></td>
-                </tr>
+                </tr> -->
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step4.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 5</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 5</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step5.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step5.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step5.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -157,30 +162,31 @@
                     <td>End Date</td>
                     <td><DatePicker v-model="step5.endDate" value-type="format"/></td>
                 </tr>
-                <tr v-for="( row, index ) in step5.subTitle" v-bind:key="index">
+                <!-- <tr v-for="( row, index ) in step5.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
                     <td><button @click="removeRow(index, step5.subTitle)">Remove</button></td>
-                </tr>
+                </tr> -->
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step5.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 6</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 6</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step6.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step6.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step6.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -189,29 +195,33 @@
                     <td><DatePicker v-model="step6.endDate" value-type="format"/></td>
                 </tr>
                 <tr v-for="( row, index ) in step6.subTitle" v-bind:key="index">
-                    <td>{{index + 1}}</td>
-                    <td><input type="text" v-model="row.sub"></td>
-                    <td><button @click="removeRow(index, step6.subTitle)">Remove</button></td>
+                    <td style="border: solid transparent;">Sub Task {{index + 1}}</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="row.sub" disabled></td>
+                    <!-- <td><button @click="removeRow(index, step6.subTitle)">Remove</button></td> -->
+                    <td v-if="index === 0" style="border: solid transparent;">ITSM 릴리즈 번호</td>
+                    <td v-if="index !== 0" style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="row.description"></td>
                 </tr>
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step6.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
         <table class="table">
             <thead>
                 <tr>
-                <td><strong>Step 7</strong></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="border-color: rgb(19, 215, 203)"><strong>Step 7</strong></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
+                <td style="border-color: rgb(19, 215, 203)"></td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Step Name</td>
-                    <td><input type="text" v-model="step7.name"></td>
-                    <td></td>
+                    <td style="border: solid transparent;">Step Name</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step7.name" disabled></td>
+                    <td style="border: solid transparent;">Description</td>
+                    <td style="border: solid transparent;"><input type="text" v-model="step7.description"></td>
                 </tr>
                 <tr>
                     <td>Start Date</td>
@@ -219,18 +229,19 @@
                     <td>End Date</td>
                     <td><DatePicker v-model="step7.endDate" value-type="format"/></td>
                 </tr>
-                <tr v-for="( row, index ) in step7.subTitle" v-bind:key="index">
+                <!-- <tr v-for="( row, index ) in step7.subTitle" v-bind:key="index">
                     <td>{{index + 1}}</td>
                     <td><input type="text" v-model="row.sub"></td>
                     <td><button @click="removeRow(index, step7.subTitle)">Remove</button></td>
-                </tr>
+                </tr> -->
             </tbody>
-            <div>
+            <!-- <div>
                 <button class="button btn-primary" @click="addRow(step7.subTitle)">Add row</button>
-            </div>
+            </div> -->
         </table>
-        <div class="btnWrap">
-			<button href="javascript:;" @click="fnAddProc">등록</button>
+        <div style="border: 16px solid transparent;" align="center">
+            <b-button href="javascript:;" style="width: 25%;" @click="fnAddProc">등록</b-button>
+			<!-- <button href="javascript:;" @click="fnAddProc">등록</button> -->
 		</div>
     </div>
 </template>
@@ -252,54 +263,63 @@ export default {
                 name: "",
                 startDate: "",
                 endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             step2: {
                 name: "",
                 startDate: "",
                 endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             step3: {
                 name: "",
                 startDate: "",
                 endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             step4: {
                 name: "",
                 startDate: "",
                 endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             step5: {
                 name: "",
+                startDate: "",
+                endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             step6: {
                 name: "",
                 startDate: "",
                 endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             step7: {
                 name: "",
                 startDate: "",
                 endDate: "",
+                description: "",
                 subTitle: [
-                    { sub: "" }
+                    { sub: "", description: "" }
                 ]
             },
             form: '',
@@ -327,7 +347,6 @@ export default {
                 if (step[i].name === "" ||
                     step[i].startDate === "" ||
                     step[i].endDate === "") {
-                        console.log("test");
                         alert("빈칸에 내용을 채워주세요.");
                         return ;
                     }
@@ -373,7 +392,15 @@ export default {
         this.step5 = process.step[4];
         this.step6 = process.step[5];
         this.step7 = process.step[6];
-        console.log(this.step1.startDate);
     }
 }
 </script>
+<style>
+input {
+    border: 2px solid rgb(19, 215, 203);
+    border-radius: 1em 1em 1em 1em;
+}
+input:disabled {
+    background: rgb(161, 159, 159);
+}
+</style>
