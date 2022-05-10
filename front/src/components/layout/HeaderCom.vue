@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" style="background-color: rgb(19, 215, 203);">
-      <b-navbar-brand href="http://localhost:8080/">Woongs MINI PROJECT</b-navbar-brand>
+      <b-navbar-brand href="http://localhost:8080/">OSS-OM 배포 프로세스</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
