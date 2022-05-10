@@ -1,18 +1,18 @@
 <template>
-    <v-calendar is-expanded :attributes='attributes'>
-        <template slot='day-content' slot-scope="props">
-            <div class="day-cell text-center" v-if="props.day.inMonth">
-                {{props.day.day}}
-                <div v-for="(dayEvent, index) in props.attributesMap" v-bind:key="index">
-                    <span class="event-badge badge badge-pill" :style="'background-color: ' + dayEvent.customData.colour ">
-                        {{dayEvent.customData.name}}
-                        <!-- <span :class="'fa fa-' + dayEvent.customData.icon"></span>
-                        <a :href="'/events/' + dayEvent.customData.slug ">{{dayEvent.customData.name}}</a> -->
-                    </span>
+    <div style="border: 16px solid rgb(19, 215, 203);">
+        <v-calendar is-expanded :attributes='attributes'>
+            <template slot='day-content' slot-scope="props">
+                <div class="day-cell text-center" v-if="props.day.inMonth">
+                    <div>{{props.day.day}}</div>
+                    <div v-for="(dayEvent, index) in props.attributesMap" v-bind:key="index">
+                        <span class="event-badge badge badge-pill" :style="'background-color: ' + dayEvent.customData.colour ">
+                            {{dayEvent.customData.name}}
+                        </span>
+                    </div>
                 </div>
-            </div>
-        </template>
-    </v-calendar>
+            </template>
+        </v-calendar>
+    </div>
 </template>
 <script>
 import moment from "moment";
@@ -23,6 +23,7 @@ export default {
     ],
     data() {
         return {
+            weekend: false,
             attributes: []
                 // { sample
                 //     highlight: false,
@@ -51,7 +52,7 @@ export default {
         inputData: function(step) {
             let inputTemp = {};
             let curDate, endDate, dateTemp;
-            let bgColor = ["gray", "red", "orange", "teal", "green", "blue", "purple"];
+            let bgColor = ["gray", "teal", "orange", "purple", "green", "blue", "red"];
 
             for (let i = 0; i < 7; i++) {
                 dateTemp = [];
